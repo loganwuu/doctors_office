@@ -6,7 +6,7 @@
 
 ## Description
 
-This application allows user to input items into their inventory.  The items are stored in a MySQL database.  The user can search through their inventory to check if a specific item has been added.  Users can also delete their entire inventory.
+This application will allow a user to enter a list of Doctors and add a list of Patients for each doctor.
 
 ## Setup
 
