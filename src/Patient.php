@@ -6,7 +6,7 @@
         private $birthdate;
         private $doctor_id;
 
-        function __construct($patient_name, $patient_id, $birthdate, $doctor_id)
+        function __construct($patient_name, $patient_id=null, $birthdate, $doctor_id)
         {
             $this->patient_name = $patient_name;
             $this->patient_id = $patient_id;
