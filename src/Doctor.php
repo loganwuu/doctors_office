@@ -58,7 +58,7 @@
 
         function save()
         {
-            $GLPBALS['DB']->exec("INSERT INTO doctors (name, specialty) VALUES ('{$this->getName()}', '{$this->getSpecialty()}');");
+            $GLOBALS['DB']->exec("INSERT INTO doctors (name, specialty) VALUES ('{$this->getName()}', '{$this->getSpecialty()}');");
             $result_id = $GLOBALS['DB']->lastInsertId();
             $this->setId($result_id);
         }
