@@ -46,20 +46,21 @@
 
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO patients (patient_name, birthdate, doctor_id) VALUES ('{$this->getPatientName()}', '{$this->getBirthDate()}', {$this->getDoctorId()});");
-            $this->id = $GLOBALS['DB']->lastInsertId();
+            $GLOBALS['DB']->exec("INSERT INTO patients (name, birthdate, doctor_id) VALUES ('{$this->getPatientName()}', '{$this->getBirthDate()}', {$this->getDoctorId()});");
+            $this->patient_id = $GLOBALS['DB']->lastInsertId();
         }
 
         static function getAll()
         {
-            $returned_patients = $GLOBALS['DB']->exec("SELECT * FROM patients ORDER BY patient_name;");
+            $returned_patients = $GLOBALS['DB']->query("SELECT * FROM patients ORDER BY name;");
             $patients = array();
             foreach($returned_patients as $patient){
-                $patient_name = $patient['patient_name'];
-                $patient_id = $patient['patient_id'];
+                $patient_name = $patient['name'];
+                $patient_id = $patient['id'];
                 $birthdate = $patient['birthdate'];
                 $doctor_id = $patient['doctor_id'];
                 $new_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
+                //var_dump($new_patient);
                 array_push($patients, $new_patient);
             }
             return $patients;

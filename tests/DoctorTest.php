@@ -6,6 +6,7 @@
     */
 
     require_once "src/Doctor.php";
+    require_once "src/Patient.php";
 
     $server = 'mysql:host=localhost;dbname=doctors_office_test';
     $username = 'root';
@@ -17,7 +18,7 @@
         protected function tearDown()
         {
             Doctor::deleteAll();
-            Category::deleteAll();
+            Patient::deleteAll();
         }
 
         function test_getName()
@@ -105,23 +106,23 @@
         {
             $name = "Jeff";
             $specialty = "Dentist";
-            $id = null;
             $test_Doctor = new Doctor($name, $specialty);
             $test_Doctor->save();
 
-            $test_doctor_id = $test_doctor->getId();
+            $test_doctor_id = $test_Doctor->getId();
 
             $patient_name = "Ben";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $test_patient = new Patient ($patient_name, $patient_id, $birthdate, $test_doctor_id);
 
             $patient_name2 = "Gen";
             $birthdate2 = "1982-02-02";
             $test_patient2 = new Patient ($patient_name2, $patient_id, $birthdate2, $test_doctor_id);
 
-            $result = $test_doctor->getPatients();
-
-            $this->assertEquals([$test_patient, $test_patient2], $result);
+            $result = $test_Doctor->getPatients();
+            //var_dump($result);
+            $this->assertEquals(array($test_patient, $test_patient2), $result);
         }
     }
 ?>

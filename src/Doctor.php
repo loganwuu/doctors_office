@@ -1,5 +1,6 @@
 <?php
-    class Doctor {
+    class Doctor
+    {
         private $name;
         private $specialty;
         private $id;
@@ -45,9 +46,11 @@
         {
             $patients = array();
             $returned_patients = $GLOBALS['DB']->query("SELECT * FROM patients WHERE doctor_id={$this->getId()};");
+            // var_dump($returned_patients);
             foreach($returned_patients as $patient){
-                $patient_name = $patient['patient_name'];
-                $patient_id = $patient['patient_id'];
+                $patient_name = $patient['name'];
+            //    var_dump("hello");
+                $patient_id = $patient['id'];
                 $birthdate = $patient['birthdate'];
                 $doctor_id = $patient['doctor_id'];
                 $new_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
@@ -59,8 +62,7 @@
         function save()
         {
             $GLOBALS['DB']->exec("INSERT INTO doctors (name, specialty) VALUES ('{$this->getName()}', '{$this->getSpecialty()}');");
-            $result_id = $GLOBALS['DB']->lastInsertId();
-            $this->setId($result_id);
+            $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
         static function getAll()

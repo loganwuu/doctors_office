@@ -1,4 +1,4 @@
-# Doctor's office with MySQL
+# Doctor's Office with MySQL
 
 ##### App to keep track of Specialties/Doctors/Patients, 8/18/15
 

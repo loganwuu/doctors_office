@@ -32,6 +32,7 @@
             //patient
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
@@ -44,7 +45,7 @@
         function test_getDoctorId()
         {
             //doctor
-            $name = "Jeff"
+            $name = "Jeff";
             $specialty = "podiatrist";
             $id = null;
             $test_doctor = new Doctor($name, $specialty, $id);
@@ -53,6 +54,7 @@
             //patient
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
@@ -72,6 +74,7 @@
 
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
@@ -90,6 +93,7 @@
 
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
@@ -115,6 +119,7 @@
 
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
@@ -140,6 +145,7 @@
 
             $patient_name = "Ray";
             $birthdate = "1980-01-01";
+            $patient_id = null;
             $doctor_id = $test_doctor->getId();
             $test_patient = new Patient($patient_name, $patient_id, $birthdate, $doctor_id);
             $test_patient->save();
